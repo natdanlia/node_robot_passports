@@ -5,6 +5,7 @@ const data = require("./models/data")
 const app = express()
 const indexRoute = require("./routes/index")
 const bodyParser = require("body-parser")
+const bcrypt = require('bcryptjs');
 
 app.engine("mustache", mustacheExpress())
 app.set("views", "./views")

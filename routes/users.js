@@ -20,6 +20,10 @@ router.post("/new", (req, res) => {
   });
 });
 
+router.get("/login", (req, res) => {
+  res.render("login")
+})
+
 
 
 router.get("/:id", (req, res) => {

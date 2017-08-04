@@ -7,14 +7,14 @@ let userSchema = mongoose.Schema({
   },
   avatar: String,
   company: String,
-  email: String,
+  email: {type: String, required: true},
   job: String,
   name: {type: String, required: true},
   phone: String,
   skills: [String],
   university: String,
-  username: String,
-  password: String
+  username: {type: String, unique: true, lowercase: true, required: true},
+  passwordHash: {type: String, required: true}
 });
 
 module.exports = mongoose.model("User", userSchema, "profiles");
