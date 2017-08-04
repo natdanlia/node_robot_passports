@@ -5,12 +5,11 @@ const data = require("./models/data")
 const app = express()
 const indexRoute = require("./routes/index")
 const bodyParser = require("body-parser")
+const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const LocalStrategy = require("passport-local").Strategy;
 const session = require('express-session');
 const flash = require('connect-flash');
-
-
 
 
 app.engine("mustache", mustacheExpress())
@@ -27,7 +26,7 @@ app.use(session({
   secret: "thisappisthebestappinthewholeworld",
   resave: false,
   saveUninitialized: false
-}))
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());

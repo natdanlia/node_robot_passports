@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
-const hash = bcrypt.hashSync(password, 8);
+
 
 let userSchema = mongoose.Schema({
   address: {
@@ -16,15 +16,23 @@ let userSchema = mongoose.Schema({
   skills: [String],
   university: String,
   username: { type: String, unique: true, lowercase: true, required: true },
-  passwordHash: { type: String, required: true }
+  passwordHash: { type: String }
 });
 
-const User = mongoose.model("User", userSchema, "profiles");
+userSchema.virtual("password")
+  .get(function () {
+    console.log("getting virtual field!!!!");
+    return null
+  })
+  .set(function (value) {
+    console.log("setting virtual field------", value);
+    const hash = bcrypt.hashSync(value, 10);
+    console.log(hash);
 
-userSchema.methods.setPassword = function(password) {
-  const hash = bcrypt.hashSync(value, 8);
-  this.passwordHash = hash;
-})
+    console.log(this);
+    console.log(arguments);
+    this.passwordHash = hash;
+  })
 
 
-module.exports =
+module.exports = mongoose.model("User", userSchema, "profiles");
