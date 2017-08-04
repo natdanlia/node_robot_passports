@@ -7,10 +7,34 @@
   <body>
     <form class="addition" action="/users/new" method="post">
       <input type="text" name="username" placeholder="Username">
-      <input type="text" name="name" placeholder="Name">
-      <input type="text" name="email" placeholder="Email">
-      <input type="tel" name="telephone" placeholder="Telephone">
-      <input type="password" name="password" placeholder="Password">
+            <br>
+            <input type="text" name="name" placeholder="Name">
+            <br>
+            <input type="text" name="email" placeholder="Email">
+            <br>
+            <input type="tel" name="phone" placeholder="Phone">
+            <br>
+            <input type="password" name="password" placeholder="Password">
+            <br>
+            <div class="skills">
+              <h3>Skills</h3>
+              <div>
+                <input id="backend" type="checkbox" name="skills" value="backend-engineering">
+                <label for="backend"> BackEnd Engineering</label>
+              </div>
+              <div>
+                <input id="frontend" type="checkbox" name="skills" value="frontend-engineering">
+                <label for="frontend"> FrontEnd Engineering</label>
+              </div>
+              <div>
+                <input id="html"type="checkbox" name="skills" value="html5">
+                <label for="html"> HTML 5</label>
+              </div>
+              <div>
+                <input id="javascript"type="checkbox" name="skills" value="javascript">
+                <label for="javascript"> Javascript</label>
+              </div>
+            </div>
       <button type="submit">Submit</button>
     </form>
   </body>
