@@ -6,14 +6,21 @@
   </head>
   <body>
     {{ #users }}
-      <form class="edit" action="/users/edit" method="post">
-        <input type="text" name="company" value={{ company }}>
-        <input type="text" name="email" value={{ email }}>
-        <input type="text" name="job" value={{ job }}>
+      <form class="edit" action="/users/{{ _id }}/edit" method="post">
         <input type="text" name="name" value={{ name }}>
-        <input type="text" name="phone" value={{ phone }}>
+        <br>
         <input type="text" name="username" value={{ username }}>
+        <br>
+        <input type="text" name="job" value={{ job }}>
+        <br>
+        <input type="text" name="company" value={{ company }}>
+        <br>
+        <input type="text" name="email" value={{ email }}>
+        <br>
+        <input type="text" name="phone" value={{ phone }}>
+        <br>
         <input type="password" name="password" value={{ password }}>
+        <br>
         <button type="submit">Update</button>
       </form>
     {{ /users }}

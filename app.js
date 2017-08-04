@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(indexRoute)
-app.use("/users/", require("./routes/users"))
+app.use("/users", require("./routes/users"))
 
 
 // Start a db connect and list after it's connected.
